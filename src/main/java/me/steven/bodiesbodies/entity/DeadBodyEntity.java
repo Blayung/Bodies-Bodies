@@ -118,7 +118,7 @@ public class DeadBodyEntity extends Entity {
     public ActionResult interact(PlayerEntity player, Hand hand) {
         if (player.getWorld().isClient) return ActionResult.SUCCESS;
 
-        if (Config.CONFIG.bodyAccessibleByAnyoneAfter > 0 && age < Config.CONFIG.bodyAccessibleByAnyoneAfter && dataTracker.get(PLAYER_UUID).isPresent() && !player.getUuid().equals(dataTracker.get(PLAYER_UUID).get())){
+        if (dataTracker.get(PLAYER_UUID).isPresent() && !player.getUuid().equals(dataTracker.get(PLAYER_UUID).get())) {
             player.sendMessage(Text.literal("This body does not belong to you!"));
             return ActionResult.PASS;
         }

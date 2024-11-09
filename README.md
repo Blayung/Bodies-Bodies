@@ -1,5 +1,2 @@
-# Bodies-Bodies
-
-https://www.curseforge.com/minecraft/mc-mods/bodies-bodies
-
+# Bodies-Bodies UPDATED
 https://modrinth.com/mod/bodies-bodies

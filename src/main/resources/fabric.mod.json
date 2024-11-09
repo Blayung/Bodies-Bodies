@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "id": "bodiesbodies",
   "version": "${version}",
-  "name": "Bodies! Bodies!",
+  "name": "Bodies! Bodies! Updated",
   "description": "No more items despawning, if you die, your dead body will lay on the cold hard ground waiting for you!",
-  "authors": ["GabrielOlvH"],
+  "authors": ["GabrielOlvH","Tea Master"],
   "contact": {
-    "repo": "https://github.com/GabrielOlvH/Bodies-Bodies"
+    "repo": "https://github.com/Blayung/Bodies-Bodies"
   },
   "license": "Apache-2.0",
   "icon": "assets/bodiesbodies/icon.png",

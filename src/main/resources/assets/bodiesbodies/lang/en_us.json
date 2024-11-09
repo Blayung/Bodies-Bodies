@@ -1,4 +1,5 @@
 {
   "bodiesbodies.data.vanilla": "Inventory",
-  "bodiesbodies.data.trinkets": "Trinkets"
+  "bodiesbodies.data.trinkets": "Trinkets",
+  "entity.bodiesbodies.dead_body": "Dead Body"
 }

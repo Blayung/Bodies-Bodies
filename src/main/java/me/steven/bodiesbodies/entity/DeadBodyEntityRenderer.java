@@ -56,7 +56,7 @@ public class DeadBodyEntityRenderer extends EntityRenderer<DeadBodyEntity> {
         Optional<UUID> playerUuid = entity.getPlayerUuid();
         if (playerUuid.isPresent() && entity.age < Config.CONFIG.bodyTurnSkeletonTime) {
             UUID uuid = playerUuid.get();
-            ClientPlayerEntity copyPlayer = new ClientPlayerEntity(client, client.world, new ClientPlayNetworkHandler(null, null, new ClientConnection(NetworkSide.CLIENTBOUND), null, new GameProfile(uuid, "null"), null), null, null, false, false) {
+            ClientPlayerEntity copyPlayer = new ClientPlayerEntity(client, client.world, new ClientPlayNetworkHandler(client, null, new ClientConnection(NetworkSide.CLIENTBOUND), null, new GameProfile(uuid, "null"), null), null, null, false, false) {
                 @Override
                 public boolean shouldRenderName() {
                     return false;
