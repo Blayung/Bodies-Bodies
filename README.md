@@ -1,2 +1,2 @@
 # Bodies-Bodies UPDATED
-https://modrinth.com/mod/bodies-bodies
+OG VERSION: https://modrinth.com/mod/bodies-bodies
