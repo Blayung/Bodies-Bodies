@@ -17,6 +17,7 @@ import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class BodiesBodiesClient implements ClientModInitializer {
     @Override
@@ -38,12 +39,19 @@ public class BodiesBodiesClient implements ClientModInitializer {
             }
 
             for (int i = 0; i < size; i++) {
-                deathData.set(buf.readInt(), DeathData.readNbt(buf.readNbt()));
+                try {
+                    deathData.set(buf.readInt(), DeathData.readNbt(buf.readNbt()));
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("WARNING: " + e);
+                }
             }
 
-            client.execute(() -> {
-                client.setScreen(new DeathHistoryScreen(Text.literal("Death History"), deathData));
-            });
+            deathData.removeIf(Objects::isNull);
+            if (!deathData.isEmpty()) {
+                client.execute(() -> {
+                    client.setScreen(new DeathHistoryScreen(Text.literal("Death History"), deathData));
+                });
+            }
         });
 
         if (FabricLoader.getInstance().isModLoaded("trinkets"))

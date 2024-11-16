@@ -54,7 +54,11 @@ public class TrinketsDeadBodyData implements DeadBodyData {
                 inventory.forEach((key, value) -> {
                     value.forEach((slot, stacks) -> {
                         for (int i = 0; i < stacks.size(); i++) {
-                            offer(inv.get(key).get(slot), entity.getWorld(), entity.getBlockPos(), i, stacks.get(i).copyAndEmpty(), player.getInventory().main);
+                            try {
+                                offer(inv.get(key).get(slot), entity.getWorld(), entity.getBlockPos(), i, stacks.get(i).copyAndEmpty(), player.getInventory().main);
+                            } catch (NullPointerException e) {
+                                System.out.println("WARNING: " + e);
+                            }
                         }
                     });
                 });
